@@ -1,8 +1,6 @@
-# 生成物不进库：由 `node dsh-usage.mjs --format html --out build/usage-dashboard.html` 生成
-# （体积 1 MB 级且每次重算都会变，提交它只会让 diff 失去意义）
-usage-dashboard.html
+# 生成物策略：只有子页面要用的那一份 HTML 进库（让 submodule 开箱可见），
+# 其余报表产物不进库（体积大、每次重算都变，提交它们只会让 diff 失去意义）。
 usage-steps.csv
 usage.json
 USAGE-REPORT.md
-build/
 node_modules/
