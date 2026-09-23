@@ -1,5 +1,7 @@
-# 生成物策略：只有子页面要用的那一份 HTML 进库（让 submodule 开箱可见），
-# 其余报表产物不进库（体积大、每次重算都变，提交它们只会让 diff 失去意义）。
+# 生成物策略：
+#   - build/usage-dashboard.html：**有意提交**（子页面 subpage.json 指向它，开箱可见）
+#   - 其它产物（含根目录那份重复的 HTML 与 CSV/JSON/Markdown 报表）：不进库
+usage-dashboard.html
 usage-steps.csv
 usage.json
 USAGE-REPORT.md
