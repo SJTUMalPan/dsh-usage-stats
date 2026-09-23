@@ -1,0 +1,8 @@
+# 生成物不进库：由 `node dsh-usage.mjs --format html --out build/usage-dashboard.html` 生成
+# （体积 1 MB 级且每次重算都会变，提交它只会让 diff 失去意义）
+usage-dashboard.html
+usage-steps.csv
+usage.json
+USAGE-REPORT.md
+build/
+node_modules/

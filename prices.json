@@ -1,0 +1,45 @@
+{
+  "currency": "CNY",
+  "source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+  "fetchedAt": "2026-09-21",
+  "unit": "元 / 百万 tokens",
+  "notes": [
+    "空闲时段价格为高峰时段价格的一半。",
+    "高峰时段 = 北京时间周一至周五（不含中国法定节假日）9:00-12:00、14:00-18:00；其余时段（含周末与法定节假日全天）为空闲时段。",
+    "deepseek-v4-flash 与 deepseek-v4-flash-vision-exp 为已下线旧模型名，请求由 DeepSeek-V4.1-Flash 提供并按 Flash 价格计费。",
+    "缓存写入不单独计费：DSH 日志中 cacheWriteTokens 恒为 0，故价目表不含缓存写单价。",
+    "peak.holidays 需按年份维护中国法定节假日；留空表示不扣除节假日（当前统计区间内无节假日，结果不受影响）。"
+  ],
+  "peak": {
+    "utcWindows": [
+      ["01:00", "04:00"],
+      ["06:00", "10:00"]
+    ],
+    "weekdaysOnly": true,
+    "holidays": []
+  },
+  "models": {
+    "deepseek-flash": {
+      "aliases": ["deepseek-v4-flash", "deepseek-v4-flash-vision-exp"],
+      "cacheHitPerM": 0.04,
+      "cacheMissPerM": 2.0,
+      "outputPerM": 8.0,
+      "offPeak": {
+        "cacheHitPerM": 0.02,
+        "cacheMissPerM": 1.0,
+        "outputPerM": 4.0
+      }
+    },
+    "deepseek-v4-pro": {
+      "aliases": [],
+      "cacheHitPerM": 0.3,
+      "cacheMissPerM": 9.0,
+      "outputPerM": 27.0,
+      "offPeak": {
+        "cacheHitPerM": 0.15,
+        "cacheMissPerM": 4.5,
+        "outputPerM": 13.5
+      }
+    }
+  }
+}

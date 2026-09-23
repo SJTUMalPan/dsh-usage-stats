@@ -1,0 +1,10 @@
+{
+  "id": "usage-stats",
+  "title": "用量",
+  "icon": "chart",
+  "order": 20,
+  "description": "DSH 各工程/会话/步骤的 token、缓存与花费统计（离线生成的单文件仪表盘）",
+  "target": "./build",
+  "index": "usage-dashboard.html",
+  "style": "standalone"
+}
