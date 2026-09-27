@@ -1,4 +1,4 @@
-# build/ —— 子页面用的仪表盘（**这一份是有意提交的**）
+# build/ —— 看板用的仪表盘（**这一份是有意提交的**）
 
 `subpage.json` 指向本目录。DSH 门户里的「用量」页读的就是
 `build/usage-dashboard.html`。
