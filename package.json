@@ -1,0 +1,15 @@
+{
+  "name": "dsh-usage-stats",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "统计 DeepSeek Harness 每个工程/会话/步骤的 token、缓存与花费；零依赖，并可作为 DSH 看板挂载",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {}
+}
