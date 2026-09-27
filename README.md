@@ -39,7 +39,9 @@ node verify.mjs
 
 ## 在浏览器里看（DSH 插件）
 
-`dsh-plugin/` 是一个 DSH 宿主插件，把报表挂到**宿主 Web 服务器**的 `/usage`：
+配套的 DSH 宿主插件**已拆成独立仓库**：
+[dsh-usage-dashboard](https://github.com/SJTUMalPan/dsh-usage-dashboard)，
+把报表挂到**宿主 Web 服务器**的 `/usage`：
 
 ```
 http://<你的 dsh web 地址>/usage
@@ -48,12 +50,15 @@ http://<你的 dsh web 地址>/usage
 用的是**宿主自己的登录态**——先在同一个地址登录 GUI，`/usage` 直接就能开，不需要第二个令牌。
 
 ```bash
-# 安装（装完重启 dsh web 生效）
-dsh plugin --profile web add "link:$PWD/dsh-plugin"   # 在仓库根目录执行
+# 安装（插件市场里也能直接装；装完重启 dsh web 生效）
+dsh plugin --profile web add github:SJTUMalPan/dsh-usage-dashboard
 
-# 刷新数据（不用重启 dsh web，页面每次请求现读磁盘）
+# 生成报表（本工具负责的部分；插件默认读 <插件包>/report/usage-dashboard.html）
 node dsh-usage.mjs --format html --out usage-dashboard.html
 ```
+
+本仓库的 [`dsh-plugin/`](dsh-plugin/) 是一个 **git submodule** 指向那个仓库，
+本地开发时两边的路径关系不变（`git clone --recursive` 即可拿到）。
 
 插件靠宿主两个现成接口：`ctx.webServer.register()` 挂路由，
 `ctx.connection.requestRejection()` 复用宿主的 Host/Origin 围栏与浏览器鉴权。
