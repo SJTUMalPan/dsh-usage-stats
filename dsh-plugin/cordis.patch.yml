@@ -4,7 +4,7 @@
 #
 # 安装（与其它本地插件一致，不需要手改 profile 的任何文件）：
 #
-#   dsh plugin --profile web add link:/workspace/deepseek_workspace/dsh-usage-stats/dsh-plugin
+#   dsh plugin --profile web add "link:$PWD/dsh-plugin"
 #
 # `dsh plugin` 会把包交给 pnpm 装进 profile，然后**对账** `dsh.profile.bundles`：
 # 只要包装了 dsh.bundle.patch，就把它的包名追加进层级列表。装完重启 `dsh web` 生效。

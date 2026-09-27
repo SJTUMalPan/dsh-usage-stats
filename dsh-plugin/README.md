@@ -21,7 +21,7 @@ Host/Origin 围栏与会话 Cookie。所以本插件**没有自己的令牌体�
 ## 安装
 
 ```bash
-dsh plugin --profile web add link:/workspace/deepseek_workspace/dsh-usage-stats/dsh-plugin
+dsh plugin --profile web add "link:$PWD/dsh-plugin"   # 在仓库根目录执行
 ```
 
 `dsh plugin` 会把包交给 pnpm 装进 profile，然后对账 `dsh.profile.bundles`——只要包装了
@@ -71,7 +71,7 @@ http://<你的 dsh web 地址>/usage
 ## 刷新数据
 
 ```bash
-cd /workspace/deepseek_workspace/dsh-usage-stats
+cd /path/to/dsh-usage-stats
 node dsh-usage.mjs --format html --out usage-dashboard.html
 ```
 

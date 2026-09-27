@@ -1,6 +1,8 @@
 # 生成物策略：
-#   - build/usage-dashboard.html：**有意提交**（子页面 subpage.json 指向它，开箱可见）
-#   - 其它产物（含根目录那份重复的 HTML 与 CSV/JSON/Markdown 报表）：不进库
+#   - build/usage-dashboard.html：**不进库**（生成物）。它含本机会话 ID 与绝对路径，
+#     属于运行现场数据，不该固化进一个会被公开的仓库。
+#     首次使用/刷新数据：node dsh-usage.mjs --format html --out build/usage-dashboard.html
+#   - 其它产物（根目录那份重复的 HTML 与 CSV/JSON/Markdown 报表）：同样不进库
 usage-dashboard.html
 usage-steps.csv
 usage.json

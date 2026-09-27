@@ -34,7 +34,10 @@ function parseArgs(argv) {
     project: null,
     out: null,
     prices: join(HERE, 'prices.json'),
-    workspace: '/workspace/deepseek_workspace',
+    // 缺省扫描「本脚本所在目录的父目录」：本仓库通常就放在工作区根下（如
+    // <workspace>/dsh-usage-stats/），因此这条缺省在别处也成立，不写死任何机器的路径。
+    // 需要扫别处就显式传 --workspace。
+    workspace: process.env.DSH_USAGE_WORKSPACE || resolve(HERE, '..'),
     topSteps: 15,
     turnsPerProject: 10,
     includeChildProjects: true,

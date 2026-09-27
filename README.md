@@ -49,7 +49,7 @@ http://<你的 dsh web 地址>/usage
 
 ```bash
 # 安装（装完重启 dsh web 生效）
-dsh plugin --profile web add link:/workspace/deepseek_workspace/dsh-usage-stats/dsh-plugin
+dsh plugin --profile web add "link:$PWD/dsh-plugin"   # 在仓库根目录执行
 
 # 刷新数据（不用重启 dsh web，页面每次请求现读磁盘）
 node dsh-usage.mjs --format html --out usage-dashboard.html
